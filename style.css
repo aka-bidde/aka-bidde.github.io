@@ -1789,3 +1789,25 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 }
 
+
+.contact-item {
+  display: flex;
+  align-items: center;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.icon-box {
+  margin-right: 10px; /* Adjust as necessary */
+}
+
+.contact-title, address {
+  margin: 0;
+  padding: 0;
+}
+
