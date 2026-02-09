@@ -1817,14 +1817,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 
-.contact-link {
-  display: block;
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-size: 0.85rem; /* optional: slightly smaller */
-}
+
 
 
 /* Email truncation */
