@@ -64,7 +64,7 @@ main {
   }
   40%,
   60% {
-    width: 6ch;
+    width: 15ch;
   }
   100% {
     width: 0;
