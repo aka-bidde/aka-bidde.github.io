@@ -39,7 +39,7 @@ main {
   white-space: nowrap;
   overflow: hidden;
   width: 0;
-  animation: typing-name 4s steps(15) infinite alternate;
+  animation: typing-name 8s steps(15) infinite alternate;
 }
 
 .name-typing {
