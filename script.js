@@ -102,6 +102,29 @@ const formBtn = document.querySelector("[data-form-btn]");
 
 
 
+// clients title scroll animation
+const clientsTitle = document.querySelector(".clients-title");
+
+if (clientsTitle) {
+  const clientsTitleObserver = new IntersectionObserver(
+    function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate");
+          observer.unobserve(entry.target); // animate only once
+        }
+      });
+    },
+    {
+      threshold: 0.4
+    }
+  );
+
+  clientsTitleObserver.observe(clientsTitle);
+}
+
+
+
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
