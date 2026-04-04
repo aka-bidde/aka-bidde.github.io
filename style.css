@@ -50,70 +50,45 @@ main {
 
 
 
-/* ===== CLIENTS TITLE ANIMATION (REPLACE ALL OLD CODE) ===== */
+/* ===== clients title scroll animation ===== */
 
 .clients-title {
   position: relative;
   display: inline-block;
-
-  /* existing style (keep your theme colors if needed) */
   color: var(--white-2);
   font-size: var(--fs-3);
   font-weight: var(--fw-500);
 
-  /* animation */
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeSlideUp 1.5s ease forwards;
+  transition: opacity 1s ease, transform 1s ease;
 
-  /* subtle glow */
-  text-shadow: 0 0 8px rgba(0, 255, 136, 0.3);
+  text-shadow: 0 0 8px rgba(0, 255, 136, 0.25);
 }
 
-/* underline */
+.clients-title.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .clients-title::after {
   content: "";
   position: absolute;
-
   left: 50%;
   bottom: -8px;
   transform: translateX(-50%);
-
-  width: 0%;
+  width: 0;
   height: 4px;
-
   background: linear-gradient(90deg, #00e5ff, #00ff88);
-
   box-shadow:
     0 0 6px rgba(0, 229, 255, 0.7),
     0 0 12px rgba(0, 255, 136, 0.5);
-
-  animation: underlineGrow 1.5s ease forwards;
-  animation-delay: 0.8s;
+  transition: width 1.2s ease 0.4s;
 }
 
-/* fade + slide animation */
-@keyframes fadeSlideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.clients-title.animate::after {
+  width: 60%;
 }
-
-/* underline animation */
-@keyframes underlineGrow {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 60%;
-  }
-}
-
 
 
 
