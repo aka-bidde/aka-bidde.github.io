@@ -48,6 +48,46 @@ main {
   border-radius: 8px;
 }
 
+
+.clients-title {
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 1.2s ease forwards;
+}
+
+/* underline animation */
+.clients-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 3px;
+  background: #03e9f4;
+  animation: underlineGrow 1.5s ease forwards;
+  animation-delay: 0.8s;
+}
+
+/* fade + slide */
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* underline grows */
+@keyframes underlineGrow {
+  to {
+    width: 100%;
+  }
+}
+
+
+
+
 #icon {
   position: absolute;
   font-size: 23px;
