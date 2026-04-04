@@ -53,36 +53,51 @@ main {
 .clients-title {
   position: relative;
   display: inline-block;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeSlideUp 1.5s ease forwards;
+  overflow: hidden;
+  white-space: nowrap;
+
+  color: var(--white-2);
+  font-size: var(--fs-3);
+  font-weight: var(--fw-500);
+  letter-spacing: 1px;
+
+  width: 0;
+  animation: typingTitle 6s steps(29, end) infinite;
 }
 
-/* underline animation */
 .clients-title::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0%;
-  height: 3px;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
   background: #03e9f4;
-  animation: underlineGrow 1.5s ease forwards;
-  animation-delay: 0.8s;
+  box-shadow: 0 0 8px rgba(3, 233, 244, 0.8);
+  animation: blinkCaret 0.8s steps(1) infinite;
 }
 
-/* fade + slide */
-@keyframes fadeSlideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+@keyframes typingTitle {
+  0% {
+    width: 0;
+  }
+  40% {
+    width: 29ch;
+  }
+  70% {
+    width: 29ch;
+  }
+  100% {
+    width: 0;
   }
 }
 
-/* underline grows */
-@keyframes underlineGrow {
-  to {
-    width: 100%;
+@keyframes blinkCaret {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
   }
 }
 
