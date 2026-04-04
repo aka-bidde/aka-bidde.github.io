@@ -62,7 +62,7 @@ main {
   letter-spacing: 1px;
 
   width: 0;
-  animation: typingTitle 6s steps(29, end) infinite;
+  animation: typingTitle 6s steps(28, end) infinite;
 }
 
 .clients-title::after {
@@ -82,10 +82,10 @@ main {
     width: 0;
   }
   40% {
-    width: 29ch;
+    width: 28ch;
   }
   70% {
-    width: 29ch;
+    width: 28ch;
   }
   100% {
     width: 0;
