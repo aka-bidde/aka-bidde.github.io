@@ -55,7 +55,7 @@ main {
   display: inline-block;
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeSlideUp 1.2s ease forwards;
+  animation: fadeSlideUp 1.5s ease forwards;
 }
 
 /* underline animation */
