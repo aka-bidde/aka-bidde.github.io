@@ -50,6 +50,8 @@ main {
 
 
 
+/* ===== TYPING TITLE (FINAL VERSION) ===== */
+
 .clients-title {
   position: relative;
   display: inline-block;
@@ -62,36 +64,52 @@ main {
   letter-spacing: 1px;
 
   width: 0;
-  animation: typingTitle 6s steps(28, end) infinite;
+
+  /* slower + smoother */
+  animation: typingTitle 8s steps(28, end) infinite;
 }
 
+/* blinking cursor */
 .clients-title::after {
   content: "";
   position: absolute;
   top: 0;
   right: 0;
+
   width: 3px;
   height: 100%;
+
   background: #03e9f4;
   box-shadow: 0 0 8px rgba(3, 233, 244, 0.8);
-  animation: blinkCaret 0.8s steps(1) infinite;
+
+  animation: blinkCaret 1s steps(1) infinite;
 }
 
+/* typing + pause + delete */
 @keyframes typingTitle {
+
+  /* start typing */
   0% {
     width: 0;
   }
-  40% {
+
+  /* finished typing */
+  30% {
     width: 28ch;
   }
-  70% {
+
+  /* HOLD (this is the pause ⭐) */
+  80% {
     width: 28ch;
   }
+
+  /* delete */
   100% {
     width: 0;
   }
 }
 
+/* cursor blink */
 @keyframes blinkCaret {
   0%, 50% {
     opacity: 1;
@@ -100,7 +118,6 @@ main {
     opacity: 0;
   }
 }
-
 
 
 #icon {
